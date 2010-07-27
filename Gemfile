@@ -11,14 +11,9 @@ gem "rails", "3.0.0.beta"
 # Rails has selected sqlite3.
 gem "sqlite3-ruby", :require => "sqlite3"
 
-## Bundle the gems you use:
-# gem "bj"
-# gem "hpricot", "0.6"
-# gem "sqlite3-ruby", :require => "sqlite3"
-# gem "aws-s3", :require => "aws/s3"
 
-## Bundle gems used only in certain environments:
-# gem "rspec", :group => :test
-# group :test do
-#   gem "webrat"
-# end
+group :test do
+  gem 'cucumber',        :git => 'git://github.com/aslakhellesoy/cucumber.git'
+  gem 'cucumber-rails',  :git => 'git://github.com/aslakhellesoy/cucumber-rails.git'
+end
+
