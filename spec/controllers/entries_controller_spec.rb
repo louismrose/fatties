@@ -33,10 +33,12 @@ describe EntriesController do
   
   describe "POST 'create'" do
     it "should be successful when save suceeds" do
-      entry = mock_model(Entry, :to_param => "1")
-      Entry.should_receive(:save).and_return(true)
+      params = {"name" => "Banana", "points" => "1"}
+      entry = mock_model(Entry)
+      Entry.should_receive(:new).with(params).and_return(entry)
+      entry.should_receive(:save).and_return(true)
       
-      post :create, :entry => entry
+      post :create, :entry => params
     end
   end
 end
