@@ -16,7 +16,7 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'capybara'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.0.0.beta.19'
   gem 'launchy'
 end
 
