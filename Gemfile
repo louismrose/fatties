@@ -2,12 +2,12 @@
 source 'http://gemcutter.org'
 
 
-gem "rails", "3.0.0.beta"
+gem "rails", "3.0.0.beta4"
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
 
-gem "mongoid", ">= 2.0.0.beta11"
+gem "mongoid", "2.0.0.beta11"
 gem "bson_ext", "1.0.4"
 
 group :test do
