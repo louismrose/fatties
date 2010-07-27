@@ -1,0 +1,19 @@
+defaults: &defaults
+  host: localhost
+
+development:
+  <<: *defaults
+  database: fatties_development
+
+test:
+  <<: *defaults
+  database: fatties_test
+
+# set these environment variables on your prod server
+production:
+  <<: *defaults
+  host: <%= ENV['MONGOID_HOST'] %>
+  port: <%= ENV['MONGOID_PORT'] %>
+  username: <%= ENV['MONGOID_USERNAME'] %>
+  password: <%= ENV['MONGOID_PASSWORD'] %>
+  database: <%= ENV['MONGOID_DATABASE'] %>

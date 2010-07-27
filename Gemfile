@@ -7,10 +7,8 @@ gem "rails", "3.0.0.beta"
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
 
-# ActiveRecord requires a database adapter. By default,
-# Rails has selected sqlite3.
-gem "sqlite3-ruby", :require => "sqlite3"
-
+gem "mongoid", ">= 2.0.0.beta11"
+gem "bson_ext", "1.0.4"
 
 group :test do
   gem 'cucumber'
