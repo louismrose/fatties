@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Fatties</title>
+	<link rel="shortcut icon" href="/favicon.ico" />
+  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag :flutie, 'screen', :cache => true %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  
+  <div id="header">
+    <h1>Fatties</h1>
+  </div>
+  <div id="main">
+    <% if flash[:error] %>
+      <div class="error"><%= flash[:error] %></div>
+    <% end %>
+	
+    <%= yield %>
+  </div>
+  </body>
+</html>

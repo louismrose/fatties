@@ -1,11 +1,27 @@
-<%= render @entries %>
+<% unless @entries.empty? %>
+  <table>
+    <th>Entry</th>
+    <th class="last">Points</th>
+    <%= render @entries %>
+  </table>
+<% end %>
 
 <%= form_for @entry do |f| -%>
-  <%= f.label :name, 'Food' %>
-  <%= f.text_field :name %>
+  <fieldset class="inputs">
+    <ol>
+      <li class="required">
+        <%= f.label :name, 'Food' %>
+        <%= f.text_field :name %>
+      </li>
+      
+      <li class="required">
+        <%= f.label :points, 'Points' %>
+        <%= f.text_field :points %>
+      </li>
+    </ol>
+  </fieldset>
   
-  <%= f.label :points, 'Points' %>
-  <%= f.text_field :points %>
-  
-  <%= submit_tag 'Add' %>
+  <fieldset class="buttons">
+    <%= submit_tag 'Add' %>
+  </fieldset>
 <% end -%>

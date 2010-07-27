@@ -10,6 +10,8 @@ gem "rails", "3.0.0.beta4"
 gem "mongoid", "2.0.0.beta11"
 gem "bson_ext", "1.0.4"
 
+gem 'flutie', '1.0.3'
+
 group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
