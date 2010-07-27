@@ -1,0 +1,11 @@
+<%= render @entries %>
+
+<%= form_for @entry do |f| -%>
+  <%= f.label :name, 'Food' %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :points, 'Points' %>
+  <%= f.text_field :points %>
+  
+  <%= submit_tag 'Add' %>
+<% end -%>
