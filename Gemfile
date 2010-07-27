@@ -13,7 +13,10 @@ gem "sqlite3-ruby", :require => "sqlite3"
 
 
 group :test do
-  gem 'cucumber',        :git => 'git://github.com/aslakhellesoy/cucumber.git'
-  gem 'cucumber-rails',  :git => 'git://github.com/aslakhellesoy/cucumber-rails.git'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'launchy'
 end
 
