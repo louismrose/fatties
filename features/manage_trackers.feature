@@ -3,11 +3,22 @@ Feature: Manage trackers
   As a fatty
   I want to track the food I eat
 
-Scenario: Add to the tracker
-  Given I am on the tracker page
-  When I fill in "Food" with "Apple"
-  And  I fill in "Points" with "0.5"
-  And  I press "Add"
-  Then I should be on the tracker page
-  And  I should see "Apple"
-  And  I should see "0.5"  
+  Scenario: Add to the tracker
+    Given I am on the tracker page
+    When I fill in "Food" with "Apple"
+    And  I fill in "Points" with "0.5"
+    And  I press "Add"
+    Then I should be on the tracker page
+    And  I should see "Apple"
+    And  I should see "0.5"
+  
+  Scenario: See today's entries on the tracker
+    Given the following entries exist:
+      | name   | points | created        |
+      | Apple  | 0.5    | 2.minutes.ago  |
+      | Banana | 1      | 1.day.ago      |
+      | Pear   | 1      | 1.day.from_now |
+    When I am on the tracker page
+    Then I should see "Apple"
+    And  I should not see "Banana"
+    And  I should not see "Pear"  
