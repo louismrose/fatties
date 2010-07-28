@@ -1,8 +1,8 @@
 class EntriesController < ApplicationController
-  respond_to :html
 
   def index
-    respond_with(@entries = Entry.all, @entry = Entry.new)
+    @entries = Entry.all
+    @entry = Entry.new
   end
   
   def create
