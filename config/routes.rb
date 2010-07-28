@@ -1,7 +1,7 @@
 Fatties::Application.routes.draw do |map|
-  get "entries/index"
-
   resources :entries, :only => [:index, :create]
+  
+  root :to => "entries#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
