@@ -8,7 +8,7 @@ describe EntriesController do
 
   describe "GET 'index'" do
     before(:each) do
-      Entry.stub(:all) { [mock_entry, mock_entry] }
+      Entry.stub(:today) { [mock_entry, mock_entry] }
       Entry.stub(:new) { mock_entry }
       
       get 'index'
