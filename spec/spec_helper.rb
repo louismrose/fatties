@@ -24,4 +24,12 @@ RSpec.configure do |config|
   # examples within a transaction, comment the following line or assign false
   # instead of true.
   # config.use_transactional_fixtures = true
+  
+  require 'database_cleaner'
+  
+  config.before(:each) do
+    DatabaseCleaner.orm = "mongoid" 
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
+  end
 end
