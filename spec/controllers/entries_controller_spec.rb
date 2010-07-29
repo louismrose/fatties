@@ -23,6 +23,10 @@ describe EntriesController do
         response.should render_template('index')
       end
     
+      it "should assign date to today's date" do
+        assigns(:date).should eq(Date.today)
+      end
+    
       it "should assign entries" do
         assigns(:entries).should eq([mock_entry, mock_entry])
       end
@@ -33,12 +37,18 @@ describe EntriesController do
     end
     
     context "when a date is specified" do
-      it "should retrieve entries for that date" do
+      before(:each) do
         Entry.should_receive(:for_date).with(Date.yesterday) { [mock_entry, mock_entry] }
       
         get 'index', :date => Date.yesterday
-        
+      end
+      
+      it "should retrieve entries for that date" do
         assigns(:entries).should eq([mock_entry, mock_entry])
+      end
+      
+      it "should assign date to yesterday's date" do
+        assigns(:date).should eq(Date.yesterday)
       end
     end
   end
