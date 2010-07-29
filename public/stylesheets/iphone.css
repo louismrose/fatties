@@ -3,6 +3,7 @@ body {
 }
 
 div#content {
+  padding: 1em 2em;
   -webkit-border-radius: 0;
-  -webkit-border-top-right-radius: 36px;
+  -webkit-border-top-right-radius: 48px;
 }
