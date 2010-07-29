@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
   def index
-    @date = params[:date] || Date.today
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @entries = Entry.for_date(@date)
     @entry = Entry.new
   end

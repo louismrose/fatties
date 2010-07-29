@@ -40,7 +40,7 @@ describe EntriesController do
       before(:each) do
         Entry.should_receive(:for_date).with(Date.yesterday) { [mock_entry, mock_entry] }
       
-        get 'index', :date => Date.yesterday
+        get 'index', :date => Date.yesterday.to_s
       end
       
       it "should retrieve entries for that date" do
