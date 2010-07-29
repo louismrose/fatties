@@ -1,7 +1,7 @@
 Feature: Manage trackers
   In order to lose weight
   As a fatty
-  I want to track the food I eat
+  I want to track the food that I eat
 
   Scenario: Add to the tracker
     Given I am on the tracker page
@@ -21,4 +21,13 @@ Feature: Manage trackers
     When I am on the tracker page
     Then I should see "Apple"
     And  I should not see "Banana"
-    And  I should not see "Pear"  
+    And  I should not see "Pear" 
+    
+  Scenario: See the total points for today's entries
+   Given the following entries exist:
+     | name   | points | created        |
+     | Toast  | 3      | 3.minutes.ago  |
+     | Apple  | 0.5    | 2.minutes.ago  |
+     | Banana | 1      | 1.minute.ago   |
+   When I am on the tracker page
+   Then I should see "4.5"
