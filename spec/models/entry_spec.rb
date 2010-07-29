@@ -2,20 +2,27 @@ require 'spec_helper'
 
 describe Entry do
   
-  context "when today is called" do
-    it "should return only those entries created today" do
-      yesterday = create_entry(1.day.ago)
-      today     = create_entry(2.seconds.ago)
-      tomorrow  = create_entry(1.day.from_now)
+  context "when for_date is called" do
+    it "should return only those entries created on the specified date" do
+      first  = create_entry(2.seconds.ago)
+      second = create_entry(1.second.ago)
+      
+      create_entry(1.day.ago)
+      create_entry(1.day.from_now)
             
-      Entry.today.size.should == 1
-      Entry.today.first.should eq(today)
+      todays_entries.size.should == 2
+      todays_entries.include? eq(first)
+      todays_entries.include? eq(second)
     end
-  end
-  
-  def create_entry(creation_date)
-    entry = Entry.new(:created => creation_date.utc)
-    entry.save
-    entry
+    
+    def create_entry(creation_date)
+      entry = Entry.new(:created => creation_date.utc)
+      entry.save
+      entry
+    end
+    
+    def todays_entries
+      Entry.for_date(Date.today)
+    end
   end
 end

@@ -4,7 +4,7 @@ class Entry
   field :points, :type => Float
   field :created, :type => Date
   
-  def self.today
-    where(:created => Time.now.utc.midnight)
+  def self.for_date(date)
+    where(:created => date.to_time(:utc))
   end
 end
