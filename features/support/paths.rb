@@ -11,8 +11,11 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
       
-    when /the tracker page/
+    when /the tracker page$/
       '/entries'
+
+    when /the tracker page for yesterday$/
+      '/entries?date=yesterday'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
