@@ -1,0 +1,167 @@
+--- 
+dependencies: 
+  bson_ext: 
+    group: 
+    - :default
+    version: = 1.0.4
+  rails: 
+    group: 
+    - :default
+    version: = 3.0.0.beta4
+  timecop: 
+    group: 
+    - :test
+    version: ">= 0"
+  database_cleaner: 
+    group: 
+    - :test
+    version: ">= 0"
+  rspec-rails: 
+    group: 
+    - :test
+    version: = 2.0.0.beta.19
+  flutie: 
+    group: 
+    - :default
+    version: = 1.0.3
+  cucumber-rails: 
+    group: 
+    - :test
+    version: ">= 0"
+  chronic: 
+    group: 
+    - :test
+    version: ">= 0"
+  mongoid: 
+    group: 
+    - :default
+    version: = 2.0.0.beta11
+  cucumber: 
+    group: 
+    - :test
+    version: ">= 0"
+  capybara: 
+    group: 
+    - :test
+    version: ">= 0"
+  launchy: 
+    group: 
+    - :test
+    version: ">= 0"
+specs: 
+- rake: 
+    version: 0.8.7
+- abstract: 
+    version: 1.0.0
+- activesupport: 
+    version: 3.0.0.beta4
+- builder: 
+    version: 2.1.2
+- i18n: 
+    version: 0.4.1
+- activemodel: 
+    version: 3.0.0.beta4
+- erubis: 
+    version: 2.6.6
+- rack: 
+    version: 1.1.0
+- rack-mount: 
+    version: 0.6.9
+- rack-test: 
+    version: 0.5.4
+- tzinfo: 
+    version: 0.3.22
+- actionpack: 
+    version: 3.0.0.beta4
+- mime-types: 
+    version: "1.16"
+- polyglot: 
+    version: 0.3.1
+- treetop: 
+    version: 1.4.8
+- mail: 
+    version: 2.2.5
+- actionmailer: 
+    version: 3.0.0.beta4
+- arel: 
+    version: 0.4.0
+- activerecord: 
+    version: 3.0.0.beta4
+- activeresource: 
+    version: 3.0.0.beta4
+- bson: 
+    version: 1.0.4
+- bson_ext: 
+    version: 1.0.4
+- bundler: 
+    version: 0.9.26
+- culerity: 
+    version: 0.2.10
+- nokogiri: 
+    version: 1.4.3.1
+- ffi: 
+    version: 0.6.3
+- json_pure: 
+    version: 1.4.3
+- rubyzip: 
+    version: 0.9.4
+- selenium-webdriver: 
+    version: 0.0.27
+- capybara: 
+    version: 0.3.9
+- rubyforge: 
+    version: 2.0.4
+- hoe: 
+    version: 2.6.1
+- chronic: 
+    version: 0.2.3
+- configuration: 
+    version: 1.1.0
+- diff-lcs: 
+    version: 1.1.2
+- trollop: 
+    version: 1.16.2
+- gherkin: 
+    version: 2.1.5
+- term-ansicolor: 
+    version: 1.0.5
+- cucumber: 
+    version: 0.8.5
+- cucumber-rails: 
+    version: 0.3.2
+- database_cleaner: 
+    version: 0.5.2
+- flutie: 
+    version: 1.0.3
+- launchy: 
+    version: 0.3.7
+- mongo: 
+    version: 1.0.6
+- will_paginate: 
+    version: 3.0.pre2
+- mongoid: 
+    version: 2.0.0.beta11
+- thor: 
+    version: 0.13.8
+- railties: 
+    version: 3.0.0.beta4
+- rails: 
+    version: 3.0.0.beta4
+- rspec-core: 
+    version: 2.0.0.beta.19
+- rspec-expectations: 
+    version: 2.0.0.beta.19
+- rspec-mocks: 
+    version: 2.0.0.beta.19
+- rspec: 
+    version: 2.0.0.beta.19
+- webrat: 
+    version: 0.7.2.beta.1
+- rspec-rails: 
+    version: 2.0.0.beta.19
+- timecop: 
+    version: 0.3.5
+hash: eca20832403d6b6424b7cbda715de0e44025300f
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org
