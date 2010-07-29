@@ -12,5 +12,10 @@ Feature: Track today's food
     Then I should see "Salad"
     And  I should see "Burger"
     And  I should see "23"
+    
+  Scenario: See yesterday's date on yesterday's tracker
+    Given the date is "28 July 2010"
+    When I am on the tracker page for yesterday
+    Then I should see "27 July 2010"
   
   
