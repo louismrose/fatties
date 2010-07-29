@@ -1,15 +1,17 @@
+<h2><%=l Date.today, :format => :long_ordinal%></h2>
+
 <% unless @entries.empty? %>
   <table>
     <thead>
       <tr>
-        <th>Entry</th>
+        <th>Food</th>
         <th class="last">Points</th>
       </tr>
     </thead>
     <tfoot>
       <tr>
         <td>Total</td>
-        <td><%=@entries.sum(:points)%></td>
+        <td class="last"><%=@entries.sum(:points)%></td>
       </tr>
     </tfoot>
     <tbody>
