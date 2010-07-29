@@ -12,6 +12,11 @@ Feature: Track today's food
     And  I should see "Apple"
     And  I should see "0.5"
   
+  Scenario: See today's date on the tracker
+    Given the date is "28 July 2010"
+    When I am on the tracker page
+    Then I should see "28 July 2010"
+  
   Scenario: See today's entries on the tracker
     Given the following entries exist:
       | name   | points | created        |
