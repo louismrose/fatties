@@ -1,6 +1,7 @@
 body {
   background-color: #B02B2C;
   margin: 40px;
+  min-width: 320px;
 }
 
 div#content {
@@ -14,13 +15,27 @@ div#main h1, h2, h3 {
   margin-bottom: 0.75em;
 }
 
-th {
-  border-bottom-width: 2px;
-}
-
 tfoot td {
   border-top: 2px solid #ccc;
   border-bottom-width: 0;
   font-weight: bold;
   text-align: left;
+}
+
+table#tracker {
+  width: auto;
+}
+
+table#tracker td, table#tracker th {
+  width: 175px;
+  padding-right: 4em;
+}
+
+table#tracker td.last, table#tracker th.last {
+  padding-right: 0;
+  text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  width: 200px;
 }
