@@ -1,3 +1,8 @@
 body {
   margin: 0;
 }
+
+div#content {
+  -webkit-border-radius: 0;
+  -webkit-border-top-right-radius: 36px;
+}
