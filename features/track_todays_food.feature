@@ -1,7 +1,7 @@
-Feature: Manage trackers
+Feature: Track today's food
   In order to lose weight
   As a fatty
-  I want to track the food that I eat
+  I want to track the food that I eat today
 
   Scenario: Add to the tracker
     Given I am on the tracker page
