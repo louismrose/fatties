@@ -20,5 +20,6 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'timecop'
+  gem 'chronic'
 end
 
