@@ -53,16 +53,51 @@ describe EntriesController do
     end
   end
   
-  describe "POST 'create'" do    
-    it "should redirect to index" do
-      valid_entry = mock_entry
-      valid_entry.should_receive(:save).and_return(true)
+  describe "POST 'create'" do  
+    context "when no date is specified" do
+      it "should redirect to index" do
+        valid_entry = mock_entry
+        valid_entry.should_receive(:save).and_return(true)
       
-      Entry.stub(:new).with({"dummy" => "params"}) { valid_entry }
+        Entry.stub(:new).with({"dummy" => "params"}) { valid_entry }
       
-      post :create, :entry => {"dummy" => "params"}
+        post :create, :entry => {"dummy" => "params"}
       
-      response.should redirect_to(:action => 'index')
+        response.should redirect_to(:action => 'index')
+      end
+      
+      it "should set the creation date of the entry to today" do
+        valid_entry = mock_entry
+        valid_entry.should_receive(:save).and_return(true)
+        valid_entry.should_receive(:created=).with(Date.today.to_time(:utc))
+      
+        Entry.stub(:new).with({"dummy" => "params"}) { valid_entry }
+      
+        post :create, :entry => {"dummy" => "params"}
+      end
+    end
+    
+    context "when a date is specified" do
+      it "should redirect to index" do
+        valid_entry = mock_entry
+        valid_entry.should_receive(:save).and_return(true)
+      
+        Entry.stub(:new).with({"dummy" => "params"}) { valid_entry }
+      
+        post :create, :entry => {"dummy" => "params"}, :date => Date.yesterday.to_s
+      
+        response.should redirect_to(:action => 'index', :date => Date.yesterday.to_s)
+      end
+      
+      it "should set the creation date of the entry to the specified date" do
+        valid_entry = mock_entry
+        valid_entry.should_receive(:save).and_return(true)
+        valid_entry.should_receive(:created=).with(Date.yesterday.to_time(:utc))
+      
+        Entry.stub(:new).with({"dummy" => "params"}) { valid_entry }
+      
+        post :create, :entry => {"dummy" => "params"}, :date => Date.yesterday.to_s
+      end
     end
   end
 end
