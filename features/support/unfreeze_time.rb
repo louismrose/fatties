@@ -1,3 +1,3 @@
-Before do
+After do
   Timecop.return
 end
