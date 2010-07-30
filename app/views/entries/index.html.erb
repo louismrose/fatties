@@ -20,7 +20,7 @@
   </table>
 <% end %>
 
-<%= form_for [@tracker, Entry.new] do |f| -%>
+<%= form_for [@tracker, Entry.new] do |f| %>
   <fieldset class="inputs">
     <ol>
       <li class="required">
@@ -38,4 +38,4 @@
   <fieldset class="buttons">
     <%= submit_tag 'Add' %>
   </fieldset>
-<% end -%>
+<% end %>
