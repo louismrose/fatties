@@ -18,4 +18,13 @@ Feature: Track today's food
     When I am on the tracker page for yesterday
     Then I should see "27 July 2010"
   
+  Scenario: Add an entry to the tracker that I forgot
+    Given the date is "28 July 2010"
+    And   I am on the tracker page for yesterday
+    When I fill in "Food" with "Apple"
+    And  I fill in "Points" with "0.5"
+    And  I press "Add"
+    Then I should see "27 July 2010"
+    And  I should see "Apple"
+    And  I should see "0.5"
   
