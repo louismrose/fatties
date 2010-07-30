@@ -30,7 +30,7 @@
       
       <li class="required">
         <%= f.label :points, 'Points' %>
-        <%= f.text_field :points %>
+        <%= f.number_field :points, :min => '0.5', :step => '0.5' %>
       </li>
     </ol>
   </fieldset>
