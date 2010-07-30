@@ -20,7 +20,7 @@
   </table>
 <% end %>
 
-<%= form_for @entry do |f| -%>
+<%= form_for @entry, :url => entries_path(:date => @date) do |f| -%>
   <fieldset class="inputs">
     <ol>
       <li class="required">
