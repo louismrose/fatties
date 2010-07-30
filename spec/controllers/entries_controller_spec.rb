@@ -10,9 +10,9 @@ describe EntriesController do
     before(:each) do
       @date = Date.today
 
-      mock_tracker.stub(:entries) {["dummy", "entries"]}
       Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
-
+      mock_tracker.stub(:entries) {["dummy", "entries"]}
+      
       get 'index', :tracker_id => @date.to_s
     end
   
@@ -37,8 +37,8 @@ describe EntriesController do
     before (:each) do
       @date = Date.today
       
-      mock_tracker.should_receive(:create_entry).with({"dummy" => "params"})
       Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
+      mock_tracker.should_receive(:create_entry).with({"dummy" => "params"})
       
       post :create, :tracker_id => @date.to_s, :entry => {"dummy" => "params"}
     end
