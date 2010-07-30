@@ -1,7 +1,9 @@
 Fatties::Application.routes.draw do |map|
-  resources :entries, :only => [:index, :create]
+  resources :trackers, :only => [:index] do
+    resources :entries, :only => [:index, :create]
+  end
   
-  root :to => "entries#index"
+  root :to => "entries#index", :tracker_id => Date.today.to_s
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -20,7 +20,7 @@ describe Entry do
     end
     
     def todays_entries
-      Entry.for_date(Date.today)
+      Entry.find_by_date(Date.today)
     end
   end
 end

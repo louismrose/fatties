@@ -1,21 +1,18 @@
 class EntriesController < ApplicationController
-  before_filter :determine_date_from_params
+  before_filter :find_tracker
 
   def index
-    @entries = Entry.for_date(@date)
-    @entry = Entry.new
+    @entries = @tracker.entries
   end
   
   def create
-    entry = Entry.new(params[:entry])
-    entry.created = @date.to_time(:utc)
-    entry.save
+    @tracker.create_entry(params[:entry])
     
-    redirect_to :action => 'index', :date => params[:date]
+    redirect_to :action => 'index'
   end
 
 private
-  def determine_date_from_params
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  def find_tracker
+    @tracker = Tracker.from_s(params[:tracker_id])
   end
 end

@@ -1,4 +1,4 @@
-<h2><%=l @date, :format => :long_ordinal%></h2>
+<h2><%=l @tracker.date, :format => :long_ordinal%></h2>
 
 <% unless @entries.empty? %>
   <table id="tracker">
@@ -20,7 +20,7 @@
   </table>
 <% end %>
 
-<%= form_for @entry, :url => entries_path(:date => @date) do |f| -%>
+<%= form_for [@tracker, Entry.new] do |f| -%>
   <fieldset class="inputs">
     <ol>
       <li class="required">

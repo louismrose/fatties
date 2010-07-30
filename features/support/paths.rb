@@ -12,10 +12,10 @@ module NavigationHelpers
       '/'
       
     when /the tracker page$/
-      '/entries'
+      '/trackers/' + Date.today.to_s + '/entries'
 
     when /the tracker page for yesterday$/
-      '/entries?date=' + Date.yesterday.to_s
+      '/trackers/' + Date.yesterday.to_s + '/entries'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
