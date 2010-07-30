@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Entry do
-  
+    
   context "when for_date is called" do
     it "should return only those entries created on the specified date" do
       first  = create_entry(2.seconds.ago)
@@ -16,9 +16,7 @@ describe Entry do
     end
     
     def create_entry(creation_date)
-      entry = Entry.new(:created => creation_date.utc)
-      entry.save
-      entry
+      Entry.create(:created => creation_date.utc)
     end
     
     def todays_entries
