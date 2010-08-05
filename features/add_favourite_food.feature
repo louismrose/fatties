@@ -3,7 +3,6 @@ Feature: Track a favourite food
   As a fatty
   I want to be able to add my favourite foods without typing them in
 
-# TODO - this should specify that Apple must appear before Toast
   Scenario: See a list of favourite foods
     Given the following entries exist:
       | name   | points | created    |
@@ -13,10 +12,9 @@ Feature: Track a favourite food
       | Toast  | 3      | 3.days.ago |
       | Toast  | 3      | 2.days.ago |
     And I am on the tracker page
-    Then I should see "Apple"  
-    And  I should see "Toast"
+    Then the "favourites" list should contain "Apple" then "Toast"
 
-  @selenium
+  @javascript
   Scenario: Track a favourite food
     Given the following entries exist:
       | name   | points | created    |
