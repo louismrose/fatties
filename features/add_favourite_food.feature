@@ -13,6 +13,28 @@ Feature: Track a favourite food
       | Toast  | 3      | 2.days.ago |
     And I am on the tracker page
     Then the "favourites" list should contain "Apple" then "Toast"
+    
+  Scenario: See a list limited to top 5 favourite foods
+    Given the following entries exist:
+      | name   | points | created    |
+      | Apple  | 0.5    | 2.days.ago |
+      | Apple  | 0.5    | 2.days.ago |
+      | Banana | 2      | 2.days.ago |
+      | Banana | 2      | 2.days.ago |
+      | Grapes | 1      | 2.day.ago  |
+      | Grapes | 1      | 2.day.ago  |
+      | Mango  | 3      | 2.days.ago |
+      | Mango  | 3      | 2.days.ago |
+      | Pear   | 1.5    | 2.days.ago |
+      | Pear   | 1.5    | 2.days.ago |
+      | Kiwi   | 3      | 2.days.ago |
+    And I am on the tracker page
+    Then I should see "Apple" within "#favourites"
+    And  I should see "Banana" within "#favourites"
+    And  I should see "Grapes" within "#favourites"
+    And  I should see "Mango" within "#favourites"
+    And  I should see "Pear" within "#favourites"
+    And  I should not see "Kiwi" within "#favourites"
 
   @javascript
   Scenario: Track a favourite food

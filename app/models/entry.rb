@@ -14,7 +14,7 @@ class Entry
   
 private
   def self.entries_grouped_by_name_and_sorted_by_popularity
-    entries_grouped_by_name.sort_by { |group| -group.size }
+    entries_grouped_by_name.sort_by { |group| -group.size }[0, 5]
   end
 
   def self.entries_grouped_by_name

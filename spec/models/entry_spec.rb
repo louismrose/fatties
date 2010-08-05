@@ -42,7 +42,19 @@ describe Entry do
       favourites.third.points.should == 1
     end
     
-    def create_entry(food, points)
+    it "should be limited to the top five foods" do
+      3.times { create_entry('Banana') }
+      3.times { create_entry('Apple') }
+      3.times { create_entry('Pear') }
+      3.times { create_entry('Grapes') }
+      3.times { create_entry('Mango') }
+      2.times { create_entry('Kiwi') }
+      
+      favourites.size.should == 5
+      favourites.map {|entry| entry.name }.should_not include('Kiwi')
+    end
+    
+    def create_entry(food, points = 1)
       Entry.create(:name => food, :points => points)
     end
     
