@@ -9,9 +9,9 @@ Feature: Track today's food
       | Salad  | 3      | 1.day.ago |
       | Burger | 20     | 1.day.ago |
     When I am on the tracker page for yesterday
-    Then I should see "Salad"
-    And  I should see "Burger"
-    And  I should see "23"
+    Then I should see "Salad" within "#tracker"
+    And  I should see "Burger" within "#tracker"
+    And  I should see "23" within "#tracker"
     
   Scenario: See yesterday's date on yesterday's tracker
     Given the date is "28 July 2010"
@@ -25,6 +25,6 @@ Feature: Track today's food
     And  I fill in "Points" with "0.5"
     And  I press "Add"
     Then I should see "27 July 2010"
-    And  I should see "Apple"
-    And  I should see "0.5"
+    And  I should see "Apple" within "#tracker"
+    And  I should see "0.5" within "#tracker"
   

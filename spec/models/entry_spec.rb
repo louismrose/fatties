@@ -23,4 +23,31 @@ describe Entry do
       Entry.find_by_date(Date.today)
     end
   end
+  
+  context "when favourites is called" do
+    it "should return foods ordered by most entries" do
+      3.times { create_entry('Banana', 2) }
+      5.times { create_entry('Apple',  0.5) }
+      2.times { create_entry('Pear',   1) }
+      
+      favourites.size.should == 3 
+      
+      favourites.first.name.should   == 'Apple'
+      favourites.first.points.should == 0.5
+      
+      favourites.second.name.should   == 'Banana'
+      favourites.second.points.should == 2
+      
+      favourites.third.name.should   == 'Pear'
+      favourites.third.points.should == 1
+    end
+    
+    def create_entry(food, points)
+      Entry.create(:name => food, :points => points)
+    end
+    
+    def favourites
+      Entry.favourites
+    end
+  end
 end

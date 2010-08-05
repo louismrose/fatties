@@ -20,6 +20,13 @@
   </table>
 <% end %>
 
+<% unless Entry.favourites.empty? %>
+  <h3>Add one of your favourite foods:</h3>
+  <ol id="favourites">
+    <%= render :partial => "favourite", :collection => Entry.favourites %>
+  </ol>
+<% end %>
+
 <%= form_for [@tracker, Entry.new] do |f| %>
   <fieldset class="inputs">
     <ol>
