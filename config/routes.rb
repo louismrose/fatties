@@ -1,4 +1,4 @@
-Fatties::Application.routes.draw do |map|
+Fatties::Application.routes.draw do 
   resources :trackers, :only => [:index] do
     resources :entries, :only => [:index, :create]
   end
