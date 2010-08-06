@@ -10,7 +10,11 @@ gem "rails", "3.0.0.rc"
 gem "mongoid", "2.0.0.beta.15"
 gem "bson_ext", "1.0.4"
 
-gem 'flutie', '1.0.3'
+# Using my flutie fork until routes are updated and
+# deprecation warning is removed
+# Might need this to deploy in the meantime: http://docs.heroku.com/bundler100rc2-git
+# gem 'flutie', '1.0.3'
+gem 'flutie', :git => "git://github.com/louismrose/flutie.git"
 
 group :test do
   gem 'cucumber'
