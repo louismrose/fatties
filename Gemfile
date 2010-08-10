@@ -14,7 +14,7 @@ gem "bson_ext", "1.0.4"
 # deprecation warning is removed
 # Might need this to deploy in the meantime: http://docs.heroku.com/bundler100rc2-git
 # gem 'flutie', '1.0.3'
-gem 'flutie', :git => "git://github.com/louismrose/flutie.git"
+gem 'flutie', :path => File.join(File.dirname(__FILE__), '/vendor/gems/flutie')
 
 group :test do
   gem 'cucumber'

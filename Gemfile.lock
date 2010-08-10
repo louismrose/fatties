@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/louismrose/flutie.git
-  revision: 7dc8054
+PATH
+  remote: vendor/gems/flutie
   specs:
     flutie (1.0.3)
 
