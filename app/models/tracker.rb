@@ -19,6 +19,7 @@ class Tracker
     entry = Entry.new(params)
     entry.created = @date.to_time(:utc)
     entry.save
+    entry
   end
   
   def to_param

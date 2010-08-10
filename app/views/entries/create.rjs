@@ -1,0 +1,8 @@
+# if @accomplishments.size == 1
+#   page.replace_html :accomplishments_status, :partial => 'accomplishments_status', :locals => { :no_of_accomplishments => 1 }
+# end
+
+page.replace_html :entries, :partial => 'entries', :locals => { :entries => @entries }
+page.visual_effect :highlight, "entry_#{@entry.id}", :duration => 2, :startcolor => "#F6E497", :endcolor => '#FFFFFF'
+
+page[:new_entry].reset

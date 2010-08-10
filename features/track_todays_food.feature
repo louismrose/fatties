@@ -3,6 +3,7 @@ Feature: Track today's food
   As a fatty
   I want to track the food that I eat today
 
+  @javascript @focus
   Scenario: Add to the tracker
     Given I am on the tracker page
     When I fill in "Food" with "Apple"

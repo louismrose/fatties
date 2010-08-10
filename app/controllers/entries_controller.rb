@@ -6,9 +6,14 @@ class EntriesController < ApplicationController
   end
   
   def create
-    @tracker.create_entry(params[:entry])
+    @entry = @tracker.create_entry(params[:entry])    
     
-    redirect_to :action => 'index'
+    if request.format.html?
+      redirect_to :action => 'index'
+    else
+      @entries = @tracker.entries
+      render 'create'
+    end
   end
 
 private

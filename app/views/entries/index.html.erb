@@ -1,24 +1,8 @@
 <h2><%=l @tracker.date, :format => :long_ordinal%></h2>
 
-<% unless @entries.empty? %>
-  <table id="tracker">
-    <thead>
-      <tr>
-        <th>Food</th>
-        <th class="last">Points</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <td>Total</td>
-        <td class="last"><%=@entries.sum(:points)%></td>
-      </tr>
-    </tfoot>
-    <tbody>
-      <%= render @entries %>
-    </tbody>
-  </table>
-<% end %>
+<div id="entries">
+  <%= render :partial => "entries", :locals => { :entries => @entries } %>
+</div>
 
 <% unless Entry.favourites.empty? %>
   <h3>Add one of your favourite foods:</h3>
@@ -27,7 +11,7 @@
   </ol>
 <% end %>
 
-<%= form_for [@tracker, Entry.new] do |f| %>
+<%= form_for [@tracker, Entry.new], :remote => true do |f| %>
   <fieldset class="inputs">
     <ol>
       <li class="required">

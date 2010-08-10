@@ -34,21 +34,53 @@ describe EntriesController do
   end
   
   describe "POST 'create'" do  
-    before (:each) do
-      @date = Date.today
+    context "when HTML request" do
+      before (:each) do
+        @date = Date.today
       
-      Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
-      mock_tracker.should_receive(:create_entry).with({"dummy" => "params"})
+        Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
+        mock_tracker.should_receive(:create_entry).with({"dummy" => "params"})
       
-      post :create, :tracker_id => @date.to_s, :entry => {"dummy" => "params"}
+        post :create, :tracker_id => @date.to_s, :entry => {"dummy" => "params"}
+      end
+    
+      it "should assign tracker to the tracker for the specified date" do
+        assigns(:tracker).should eq(mock_tracker)
+      end
+    
+      it "should redirect to the index action" do
+        response.should redirect_to(:action => 'index')
+      end
     end
     
-    it "should assign tracker to the tracker for the specified date" do
-      assigns(:tracker).should eq(mock_tracker)
-    end
+    context "when JS request" do
+      before (:each) do
+        @date = Date.today
+      
+        Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
+        mock_tracker.should_receive(:create_entry).with({"dummy" => "params"}) { "dummy_entry" }
+        
+        mock_tracker.stub(:entries) {["dummy", "entries"]}
+        
+      
+        xhr :post, :create, :tracker_id => @date.to_s, :entry => {"dummy" => "params"}
+      end
     
-    it "should redirect to the index action" do
-      response.should redirect_to(:action => 'index')
+      it "should assign tracker to the tracker for the specified date" do
+        assigns(:tracker).should eq(mock_tracker)
+      end
+      
+      it "should assign entry to the newly created entry" do
+        assigns(:entry).should eq("dummy_entry")
+      end
+      
+      it "should assign entries from the tracker" do
+        assigns(:entries).should eq(["dummy", "entries"])
+      end
+    
+      it "should render the create template" do
+        response.should render_template('create')
+      end
     end
   end
 end

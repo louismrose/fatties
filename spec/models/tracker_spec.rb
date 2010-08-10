@@ -25,7 +25,7 @@ describe Tracker do
     mock_entry.should_receive(:created=).with(@date.to_time(:utc))
     mock_entry.should_receive(:save)
     
-    @tracker.create_entry("dummy" => "params")
+    @tracker.create_entry("dummy" => "params").should == mock_entry
   end
   
 private
