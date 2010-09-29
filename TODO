@@ -1,7 +1,2 @@
-* Name and points must be specified
-
-Maybe:
-* Links for viewing other dates
-* Month view with points for each day
-* Favourites / autocomplete
-* Track exercise
+Added a created field to Entry didn't require me to migrate the database.
+However, it might have been useful to provide support for this: particularly on the production side. Had to use 
