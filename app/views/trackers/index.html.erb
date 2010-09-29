@@ -1,2 +1,13 @@
-<h1>Trackers#index</h1>
-<p>Find me in app/views/trackers/index.html.erb</p>
+<h1>July 2010</h1>
+
+<table class="calendar">
+<% month_for(@date).map(&:day).each do |day| %>
+  <% if day % 7 == 1 %>
+  <tr>
+  <% end %>
+    <td <%="class=\"today\"".html_safe if day == 12 %>><span class="date"><%=day%></span><p class="points">25</p></td>
+  <% if day % 7 == 0 or day == 31 %>
+  </tr>
+  <% end %>
+<% end %>
+</table>

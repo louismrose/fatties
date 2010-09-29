@@ -58,3 +58,29 @@ ol#favourites {
 input[type="text"], input[type="password"] {
   width: 200px;
 }
+
+.calendar tr {
+  height: 6em;
+}
+
+.calendar td {
+  border: 1px solid #ccc;
+  text-align: right;
+  vertical-align:text-top;
+}
+
+.calendar td .date {
+  font-size: 85%;
+  width: 10px;
+}
+
+.calendar td .points {
+  text-align: center;
+  font-size: 200%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.calendar td.today {
+  background-color: #ff8;
+}

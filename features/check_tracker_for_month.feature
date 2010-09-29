@@ -1,3 +1,4 @@
+@wip
 Feature: Track points for month
   In order to lose weight
   As a fatty
