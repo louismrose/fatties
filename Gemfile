@@ -16,6 +16,10 @@ gem "bson_ext", "1.0.4"
 # gem 'flutie', '1.0.3'
 gem 'flutie', :git => "git://github.com/louismrose/flutie.git"
 
+group :development do
+  gem 'rspec-rails', '2.0.0.beta.19'
+end
+
 group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
