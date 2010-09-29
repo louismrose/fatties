@@ -24,6 +24,6 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'timecop'
-  gem 'chronic'
+  gem 'aaronh-chronic', :require => 'chronic' # aaronh version supports Ruby 1.9.2
 end
 
