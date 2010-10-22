@@ -80,6 +80,20 @@ input[type="text"], input[type="password"] {
   width: 8em;
 }
 
+.calendar td.today {
+  background-color: #ff8;
+}
+
+.calendar td:hover {
+  background-color: #fcc;
+  cursor: pointer;
+}
+
+.calendar a, .calendar a:hover, .calendar a:active {
+  color: #000;
+  text-decoration: none;
+}
+
 .calendar td .date {
   font-size: 85%;
   width: 10px;
@@ -90,8 +104,4 @@ input[type="text"], input[type="password"] {
   font-size: 200%;
   margin-top: 10px;
   font-weight: bold;
-}
-
-.calendar td.today {
-  background-color: #ff8;
 }

@@ -13,3 +13,7 @@ Behaviours.add("click", "populate_form", function(element, event) {
   $('entry_points').value = element.readAttribute('data-points');
   $('entry_points').focus();
 });
+
+Behaviours.add("click", "open_tracker", function(element, event) {
+  window.location = element.getElementsBySelector('a');
+});

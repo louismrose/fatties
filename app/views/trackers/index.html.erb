@@ -16,8 +16,8 @@
     </tr>
     <tr>
     <% end %>
-      <%= content_tag(:td, :id => date, :class => ("today" if date == @date)) do %>
-        <span class="date"><%=date.day%></span>
+      <%= content_tag(:td, :id => date, :class => ("today" if date == @date), "data-behaviours" => "open_tracker") do %>
+        <span class="date"><%= link_to date.day, tracker_entries_path(date) %></span>
         <p class="points"><%=Entry.total_for(date)%></p>
       <% end %>
   <% end %>
