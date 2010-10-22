@@ -1,5 +1,5 @@
 module TrackersHelper
-  def month_for(date)
+  def dates_in_month_of(date)
     [].tap do |dates|
       current = date.beginning_of_month
       while current <= date.end_of_month

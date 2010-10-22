@@ -12,6 +12,10 @@ class Entry
     entries_grouped_by_name_and_sorted_by_popularity.map { |group| group.first }
   end
   
+  def self.total_for(date)
+    find_by_date(date).sum(:points)
+  end
+  
 private
   def self.entries_grouped_by_name_and_sorted_by_popularity
     entries_grouped_by_name.sort_by { |group| -group.size }[0, 5]

@@ -59,14 +59,25 @@ input[type="text"], input[type="password"] {
   width: 200px;
 }
 
+.calendar thead tr {
+  height: 2em;
+  background-color: #ddd;
+}
+
 .calendar tr {
   height: 6em;
+}
+
+.calendar th {
+  border: 1px solid #ccc;
+  text-align: center; 
 }
 
 .calendar td {
   border: 1px solid #ccc;
   text-align: right;
   vertical-align:text-top;
+  width: 8em;
 }
 
 .calendar td .date {
