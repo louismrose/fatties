@@ -1,11 +1,9 @@
 module TrackersHelper
-  def dates_in_month_of(date)
-    [].tap do |dates|
-      current = date.beginning_of_month
-      while current <= date.end_of_month
-        dates << current
-        current = current.tomorrow
-      end
-    end
+  def start_of_week?(date)
+    date.monday?
+  end
+  
+  def start_of_month?(date)
+    date == date.beginning_of_month
   end
 end

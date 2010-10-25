@@ -4,7 +4,8 @@ require 'nokogiri'
 describe "trackers/index.html.erb" do
   context "for a date in July 2010" do
     before(:each) do
-      assign(:date, Chronic.parse("22 July 2010").to_date)
+      a_date_in_july = Chronic.parse("22 July 2010").to_date
+      assign(:month, Month.new(a_date_in_july))
       render
       @calendar = Calendar.new rendered
     end
@@ -28,15 +29,11 @@ describe "trackers/index.html.erb" do
     it "the last Saturday should be the 31st" do
       @calendar.last_week.saturday.date.should == '31'
     end
-    
-    it "the current day should be the 22nd" do
-      @calendar.today.date.should == '22'
-    end
   end
   
   context "for a date in a month starting on a Monday" do
     before(:each) do
-      assign(:date, Chronic.parse("22 November 2010").to_date)
+      assign(:month, Month.new(Chronic.parse("22 November 2010").to_date))
       render
       @calendar = Calendar.new rendered
     end
@@ -48,7 +45,7 @@ describe "trackers/index.html.erb" do
   
   context "for a date in a month ending on a Sunday" do
     before(:each) do
-      assign(:date, Chronic.parse("22 October 2010").to_date)
+      assign(:month, Month.new(Chronic.parse("22 October 2010").to_date))
       render
       @calendar = Calendar.new rendered
     end

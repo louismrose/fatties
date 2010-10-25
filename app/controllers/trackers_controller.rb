@@ -1,5 +1,5 @@
 class TrackersController < ApplicationController
   def index
-    @date = Date.today
+    @month = Month.new(Date.today)
   end
 end

@@ -22,6 +22,10 @@ class Tracker
     entry
   end
   
+  def points
+    Entry.total_for(@date)
+  end
+  
   def to_param
     @date.to_s
   end
