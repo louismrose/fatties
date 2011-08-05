@@ -55,7 +55,7 @@ ol#favourites {
   font-size: 110%;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
   width: 200px;
 }
 
