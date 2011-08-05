@@ -12,7 +12,7 @@ Feature: Track a favourite food
       | Toast  | 3      | 3.days.ago |
       | Toast  | 3      | 2.days.ago |
     And I am on the tracker page
-    Then the "favourites" list should contain "Apple" then "Toast"
+    Then "the favourites list" should contain "Apple" then "Toast"
     
   Scenario: See a list limited to top 5 favourite foods
     Given the following entries exist:
@@ -29,12 +29,12 @@ Feature: Track a favourite food
       | Pear   | 1.5    | 2.days.ago |
       | Kiwi   | 3      | 2.days.ago |
     And I am on the tracker page
-    Then I should see "Apple" within "#favourites"
-    And  I should see "Banana" within "#favourites"
-    And  I should see "Grapes" within "#favourites"
-    And  I should see "Mango" within "#favourites"
-    And  I should see "Pear" within "#favourites"
-    And  I should not see "Kiwi" within "#favourites"
+    Then I should see "Apple" within the favourites list
+    And  I should see "Banana" within the favourites list
+    And  I should see "Grapes" within the favourites list
+    And  I should see "Mango" within the favourites list
+    And  I should see "Pear" within the favourites list
+    And  I should not see "Kiwi" within the favourites list
 
   @javascript
   Scenario: Track a favourite food

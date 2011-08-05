@@ -9,25 +9,20 @@ gem "rails", "3.0.0.rc"
 
 gem "mongoid", "2.0.0.beta.15"
 gem "bson_ext", "1.0.4"
-
-# Using my flutie fork until routes are updated and
-# deprecation warning is removed
-# Might need this to deploy in the meantime: http://docs.heroku.com/bundler100rc2-git
-# gem 'flutie', '1.0.3'
-gem 'flutie', :git => "git://github.com/louismrose/flutie.git"
+gem 'flutie', '1.1.1'
 
 group :development do
   gem 'rspec-rails', '2.0.0.beta.19'
 end
 
 group :test do
-  gem 'cucumber'
-  gem 'cucumber-rails'
-  gem 'capybara'
+  gem 'cucumber', '1.0.0'
+  gem 'cucumber-rails', '1.0.2'
+  gem 'capybara', '1.0.0'
   gem 'rspec-rails', '2.0.0.beta.19'
-  gem 'launchy'
-  gem 'database_cleaner'
-  gem 'timecop'
-  gem 'aaronh-chronic', :require => 'chronic' # aaronh version supports Ruby 1.9.2
+  gem 'launchy', '0.3.7'
+  gem 'database_cleaner', '0.5.2'
+  gem 'timecop', '0.3.5'
+  gem 'aaronh-chronic', '0.3.9', :require => 'chronic' # aaronh version supports Ruby 1.9.2
 end
 
