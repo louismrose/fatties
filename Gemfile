@@ -23,6 +23,6 @@ group :test do
   gem 'launchy', '0.3.7'
   gem 'database_cleaner', '0.6.7'
   gem 'timecop', '0.3.5'
-  gem 'aaronh-chronic', '0.3.9', :require => 'chronic' # aaronh version supports Ruby 1.9.2
+  gem 'chronic', '0.6.2'
 end
 
