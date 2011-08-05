@@ -12,14 +12,14 @@ gem 'bson_ext', '1.3.1'
 gem 'flutie', '1.2.2'
 
 group :development do
-  gem 'rspec-rails', '2.0.0.beta.19'
+  gem 'rspec-rails', '2.6.1'
 end
 
 group :test do
   gem 'cucumber', '1.0.0'
   gem 'cucumber-rails', '1.0.2'
   gem 'capybara', '1.0.0'
-  gem 'rspec-rails', '2.0.0.beta.19'
+  gem 'rspec-rails', '2.6.1'
   gem 'launchy', '0.3.7'
   gem 'database_cleaner', '0.5.2'
   gem 'timecop', '0.3.5'
