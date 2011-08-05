@@ -11,9 +11,17 @@ var Behaviours = {
 Behaviours.add("click", "populate_form", function(element, event) {
   $('entry_name').value   = element.readAttribute('data-name');
   $('entry_points').value = element.readAttribute('data-points');
-  $('entry_points').focus();
+
+  if(!userIsOnTouchDevice()) {
+    $('entry_points').focus();
+  }
 });
 
 Behaviours.add("click", "open_tracker", function(element, event) {
   window.location = element.getElementsBySelector('a');
 });
+
+
+function userIsOnTouchDevice() {
+  return navigator.userAgent.match(/iPod|iPhone|iPad/i);
+}

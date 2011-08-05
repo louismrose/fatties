@@ -5,13 +5,14 @@
 </div>
 
 <% unless Entry.favourites.empty? %>
-  <h3>Add one of your favourite foods:</h3>
+  <h3>Add one of your favourites:</h3>
   <ol id="favourites">
     <%= render :partial => "favourite", :collection => Entry.favourites %>
   </ol>
 <% end %>
 
 <%= form_for [@tracker, Entry.new], :remote => true do |f| %>
+  <a name="new_entry"></a>
   <fieldset class="inputs">
     <ol>
       <li class="required">
