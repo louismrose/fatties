@@ -2,13 +2,13 @@
 source 'http://gemcutter.org'
 
 
-gem "rails", "3.0.0.rc"
+gem 'rails', '3.0.9'
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
 
-gem "mongoid", "2.0.0.beta.15"
-gem "bson_ext", "1.0.4"
+gem 'mongoid', '2.1.5'
+gem 'bson_ext', '1.3.1'
 gem 'flutie', '1.2.2'
 
 group :development do

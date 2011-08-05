@@ -10,7 +10,6 @@ if ENV['MONGOHQ_URL']
   ENV['MONGOID_DATABASE'] = mongo_uri.path.gsub('/', '')
 end
 
-require 'mongoid/railtie'
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'active_resource/railtie'
