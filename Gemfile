@@ -10,6 +10,7 @@ gem 'rails', '3.0.9'
 gem 'mongoid', '2.1.5'
 gem 'bson_ext', '1.3.1'
 gem 'flutie', '1.2.2'
+gem 'hoptoad_notifier'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
