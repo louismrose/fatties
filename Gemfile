@@ -9,7 +9,7 @@ gem "rails", "3.0.0.rc"
 
 gem "mongoid", "2.0.0.beta.15"
 gem "bson_ext", "1.0.4"
-gem 'flutie', '1.1.1'
+gem 'flutie', '1.2.2'
 
 group :development do
   gem 'rspec-rails', '2.0.0.beta.19'
