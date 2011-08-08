@@ -1,0 +1,40 @@
+<%= form_for [@tracker, Entry.new], :remote => true, :id => "new_entry" do |f| %>
+  <a name="new_entry"></a>
+  
+  <ol id="entry_mode_selection">
+    <%= switch_entry_mode_link 'Points' %>
+    <%= switch_entry_mode_link 'Nutritional' %>
+  </ol>
+  
+  <fieldset class="inputs">
+    <ol>
+      <li class="required">
+        <%= f.label :name, 'Food' %>
+        <%= f.text_field :name %>
+      </li>
+      
+      <% case @entry_mode %>
+      <% when :points %>
+        <li class="required">
+          <%= f.label :points, 'Points' %>
+          <%= f.number_field :points, :min => '0', :step => '0.5' %>
+        </li>
+        
+      <% when :nutritional %>
+        <%= labelled_number_field 'Carbohydrate' %>
+        <%= labelled_number_field 'Protein' %>
+        <%= labelled_number_field 'Fat' %>
+        <%= labelled_number_field 'Fibre' %>
+        
+        <li class="required">
+          <%= f.label :points, 'Points' %>
+          <%= f.number_field :points, :min => '0', :step => '0.5', :readonly => true %>
+        </li>
+      <% end %>
+    </ol>
+  </fieldset>
+  
+  <fieldset class="buttons">
+    <%= submit_tag 'Add' %>
+  </fieldset>
+<% end %>

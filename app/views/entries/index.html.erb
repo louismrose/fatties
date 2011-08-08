@@ -11,23 +11,4 @@
   </ol>
 <% end %>
 
-<%= form_for [@tracker, Entry.new], :remote => true do |f| %>
-  <a name="new_entry"></a>
-  <fieldset class="inputs">
-    <ol>
-      <li class="required">
-        <%= f.label :name, 'Food' %>
-        <%= f.text_field :name %>
-      </li>
-      
-      <li class="required">
-        <%= f.label :points, 'Points' %>
-        <%= f.number_field :points, :min => '0.5', :step => '0.5' %>
-      </li>
-    </ol>
-  </fieldset>
-  
-  <fieldset class="buttons">
-    <%= submit_tag 'Add' %>
-  </fieldset>
-<% end %>
+<%= render :partial => "new_entry" %>

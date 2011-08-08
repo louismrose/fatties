@@ -7,29 +7,45 @@ describe EntriesController do
   end
 
   describe "GET 'index'" do
-    before(:each) do
-      @date = Date.today
+    context "when the entry mode is not specified" do 
+      before(:each) do
+        @date = Date.today
 
-      Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
-      mock_tracker.stub(:entries) {["dummy", "entries"]}
+        Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
+        mock_tracker.stub(:entries) {["dummy", "entries"]}
       
-      get 'index', :tracker_id => @date.to_s
-    end
+        get 'index', :tracker_id => @date.to_s
+      end
   
-    it "should assign tracker to the tracker for the specified date" do
-      assigns(:tracker).should eq(mock_tracker)
+      it "should assign tracker to the tracker for the specified date" do
+        assigns(:tracker).should eq(mock_tracker)
+      end
+    
+      it "should assign entries from the tracker" do
+        assigns(:entries).should eq(["dummy", "entries"])
+      end
+    
+      it "should assign points as the entry mode" do
+        assigns(:entry_mode).should == :points
+      end
+  
+      it "should be successful" do
+        response.should be_success
+      end
+  
+      it "should render the index template" do
+        response.should render_template('index')
+      end
     end
     
-    it "should assign entries from the tracker" do
-      assigns(:entries).should eq(["dummy", "entries"])
-    end
-  
-    it "should be successful" do
-      response.should be_success
-    end
-  
-    it "should render the index template" do
-      response.should render_template('index')
+    context "when the entry mode is specified" do
+      it "should assign the entry mode" do
+        @entry_mode = "nutritional"
+        Tracker.stub(:from_s) { mock_tracker }
+        get 'index', :tracker_id => 1, :entry_mode => @entry_mode 
+
+        assigns(:entry_mode).should == @entry_mode.to_sym
+      end
     end
   end
   
@@ -50,6 +66,29 @@ describe EntriesController do
     
       it "should redirect to the index action" do
         response.should redirect_to(:action => 'index')
+      end
+    end
+    
+    context "when HTML request and no points are specified" do
+      it "should calculate points" do
+        @date = Date.today
+      
+        Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
+        mock_tracker.should_receive(:create_entry).with({"points" => 8})
+      
+        # SMELL: this test is really unclear. It's not apparent that these
+        # values for carbs, etc should result in a points value of 8
+        # TODO: Consider pushing the calculation onto the client side
+        # (using Javascript), or onto a library server-side class
+        params = { :carbohydrate => "63.9",
+                   :protein => "6.8",
+                   :fat => "2.5",
+                   :fibre => "7.7",
+                   :entry => {"points" => ""},
+                   :tracker_id => @date.to_s
+                 }
+      
+        post :create, params
       end
     end
     

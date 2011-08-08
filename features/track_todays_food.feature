@@ -3,8 +3,8 @@ Feature: Track today's food
   As a fatty
   I want to track the food that I eat today
 
-  @javascript @focus
-  Scenario: Add to the tracker
+  @javascript
+  Scenario: Add to the tracker using Fatties points
     Given I am on the tracker page
     When I fill in "Food" with "Apple"
     And  I fill in "Points" with "0.5"
@@ -12,6 +12,20 @@ Feature: Track today's food
     Then I should be on the tracker page
     And  I should see "Apple" within "#tracker"
     And  I should see "0.5" within "#tracker"
+  
+  Scenario: Add to the tracker using nutritional information
+    Given I am on the tracker page
+    When  I follow "Nutritional"
+    And   I fill in the following:
+           | Food         | Muesli |
+           | Carbohydrate | 63.9   |
+           | Protein      | 6.8    |
+           | Fat          | 2.5    |
+           | Fibre        | 7.7    |
+    And   I press "Add"
+    Then  I should be on the tracker page
+    And   I should see "Muesli" within "#tracker"
+    And   I should see "8" within "#tracker"
   
   Scenario: See today's date on the tracker
     Given the date is "28 July 2010"

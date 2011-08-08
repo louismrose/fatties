@@ -21,7 +21,6 @@ Behaviours.add("click", "open_tracker", function(element, event) {
   window.location = element.getElementsBySelector('a');
 });
 
-
 function userIsOnTouchDevice() {
   return navigator.userAgent.match(/iPod|iPhone|iPad/i);
 }

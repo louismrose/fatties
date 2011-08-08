@@ -1,5 +1,6 @@
 - Is anything further needed to support Pro Points?
 - Points calculators (nutritional information -> Pro Points, old Points -> Pro Points).
+-- Push points calculation to client side with Javascript
 
 Possible features
 - Deleting entries? (Can do this via the console for now)
