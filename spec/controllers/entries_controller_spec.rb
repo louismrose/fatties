@@ -69,29 +69,6 @@ describe EntriesController do
       end
     end
     
-    context "when HTML request and no points are specified" do
-      it "should calculate points" do
-        @date = Date.today
-      
-        Tracker.stub(:from_s).with(@date.to_s) { mock_tracker }
-        mock_tracker.should_receive(:create_entry).with({"points" => 8})
-      
-        # SMELL: this test is really unclear. It's not apparent that these
-        # values for carbs, etc should result in a points value of 8
-        # TODO: Consider pushing the calculation onto the client side
-        # (using Javascript), or onto a library server-side class
-        params = { :carbohydrate => "63.9",
-                   :protein => "6.8",
-                   :fat => "2.5",
-                   :fibre => "7.7",
-                   :entry => {"points" => ""},
-                   :tracker_id => @date.to_s
-                 }
-      
-        post :create, params
-      end
-    end
-    
     context "when JS request" do
       before (:each) do
         @date = Date.today
