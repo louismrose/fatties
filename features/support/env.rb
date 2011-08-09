@@ -12,6 +12,12 @@ require 'cucumber/rails'
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
 
+# Firefox doesn't fire focus / blur / change events unless the window is active
+# which isn't always the case when driven from Selenium => prefer Chrome
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how 
 # your application behaves in the production environment, where an error page will 

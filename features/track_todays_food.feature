@@ -12,7 +12,8 @@ Feature: Track today's food
     Then I should be on the tracker page
     And  I should see "Apple" within "#tracker"
     And  I should see "0.5" within "#tracker"
-  
+
+  @javascript
   Scenario: Add to the tracker using nutritional information
     Given I am on the tracker page
     When  I follow "Nutritional"

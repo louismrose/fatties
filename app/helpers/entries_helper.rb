@@ -11,7 +11,7 @@ module EntriesHelper
   def labelled_number_field name
     content_tag(:li, :class => 'required') do
       label_tag(name.downcase.to_sym, name) +
-      number_field_tag(name.downcase.to_sym, nil, :min => '0', :step => '0.5')
+      number_field_tag(name.downcase.to_sym, nil, :min => '0', :step => '0.1', "data-behaviours" => :calculate_points_from_nutritional_information)
     end
   end
 end
