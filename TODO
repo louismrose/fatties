@@ -1,6 +1,11 @@
-- Is anything further needed to support Pro Points?
 - Points calculators (nutritional information -> Pro Points, old Points -> Pro Points).
--- Push points calculation to client side with Javascript
+-- Provide a Calculation model and controller that the client-side Javascript can delegate to,
+   as I don't like that the calculation domain logic is separate from the other domain logic,
+   which is specified in Rails.
+
+Possible refactorings
+- Switch to JQuery ahead of Rails 3.1
+- Switch to SASS and Coffeescript when Rails 3.1 is released
 
 Possible features
 - Deleting entries? (Can do this via the console for now)
