@@ -4,6 +4,7 @@
    which is specified in Rails.
 
 Possible refactorings
+- Move "Favourites" into the "entry mode" part of entries/index.html
 - Switch to SASS and Coffeescript when Rails 3.1 is released
 
 Possible features
