@@ -11,6 +11,7 @@ gem 'mongoid', '2.1.5'
 gem 'bson_ext', '1.3.1'
 gem 'flutie', '1.2.2'
 gem 'hoptoad_notifier'
+gem 'jquery-rails'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
