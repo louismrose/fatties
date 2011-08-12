@@ -4,7 +4,6 @@
    which is specified in Rails.
 
 Possible refactorings
-- Switch to JQuery ahead of Rails 3.1
 - Switch to SASS and Coffeescript when Rails 3.1 is released
 
 Possible features
