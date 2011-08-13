@@ -7,6 +7,7 @@ require 'rake'
 require 'rake/testtask'
 require 'rdoc/task'
 
-task :default => [:spec, :"cucumber:all"]
+task :test => [:spec, :"cucumber:all"]
+task :default => :test
 
 Fatties::Application.load_tasks
