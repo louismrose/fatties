@@ -1,0 +1,50 @@
+.calendar {
+  $grey: #F1F1F1;
+  
+  thead tr {
+    height: 2em;
+    background-color: $grey;
+  }
+  
+  tr {
+    height: 6em;
+  }
+  
+  th {
+    border: 1px solid darken($grey, 15%);
+    text-align: center; 
+  }
+  
+  td {
+    border: 1px solid darken($grey, 15%);
+    text-align: right;
+    vertical-align: text-top;
+    width: 8em;
+    
+    .date {
+      font-size: 85%;
+      width: 10px;
+    }
+    
+    .points {
+      text-align: center;
+      font-size: 200%;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  }
+  
+  td.today {
+    background-color: #ff8;
+  }
+  
+  td:hover {
+    background-color: #fcc;
+    cursor: pointer;
+  }
+  
+  a, a:hover, a:active {
+    color: black;
+    text-decoration: none;
+  }
+}
