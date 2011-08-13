@@ -1,5 +1,5 @@
 <% unless entries.empty? %>
-  <table id="tracker">
+  <table>
     <thead>
       <tr>
         <th>Food</th>
@@ -12,7 +12,7 @@
         <td class="last"><%=entries.sum(:points)%></td>
       </tr>
     </tfoot>
-    <tbody id="tracker_entries">
+    <tbody>
       <%= render entries %>
     </tbody>
   </table>
