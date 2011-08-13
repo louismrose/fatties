@@ -2,14 +2,21 @@
 source 'http://gemcutter.org'
 
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.1.0.rc5'
 
 ## Bundle edge rails:
-# gem "rails", :git => "git://github.com/rails/rails.git"
+# gem "rails", git: "git://github.com/rails/rails.git"
+
+# Asset template engines
+group :assets do
+  gem 'sass-rails', "3.1.0.rc5"
+  gem 'coffee-script'
+  gem 'uglifier'
+end
 
 gem 'mongoid', '2.1.5'
 gem 'bson_ext', '1.3.1'
-gem 'flutie', '1.2.2'
+gem 'flutie', git: "git://github.com/thoughtbot/flutie.git"  # works with asset pipeline
 gem 'hoptoad_notifier'
 gem 'jquery-rails'
 

@@ -1,10 +1,10 @@
-Fatties::Application.routes.draw do 
+Fatties::Application.routes.draw do
   resources :trackers, :only => [:index] do
     resources :entries, :only => [:index, :create]
   end
-  
+
   root :to => "entries#index", :tracker_id => Date.today.to_s
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -22,12 +22,12 @@ Fatties::Application.routes.draw do
   # Sample resource route with options:
   #   resources :products do
   #     member do
-  #       get :short
-  #       post :toggle
+  #       get 'short'
+  #       post 'toggle'
   #     end
   #
   #     collection do
-  #       get :sold
+  #       get 'sold'
   #     end
   #   end
 
@@ -41,7 +41,7 @@ Fatties::Application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get :recent, :on => :collection
+  #       get 'recent', :on => :collection
   #     end
   #   end
 
@@ -54,7 +54,7 @@ Fatties::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
