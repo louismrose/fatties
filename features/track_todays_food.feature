@@ -10,8 +10,8 @@ Feature: Track today's food
     And  I fill in "Points" with "0.5"
     And  I press "Add"
     Then I should be on the tracker page
-    And  I should see "Apple" within "#tracker"
-    And  I should see "0.5" within "#tracker"
+    And  I should see "Apple" within the tracker
+    And  I should see "0.5" within the tracker
 
   @javascript
   Scenario: Add to the tracker using nutritional information
@@ -25,8 +25,8 @@ Feature: Track today's food
            | Fibre        | 7.7    |
     And   I press "Add"
     Then  I should be on the tracker page
-    And   I should see "Muesli" within "#tracker"
-    And   I should see "8" within "#tracker"
+    And   I should see "Muesli" within the tracker
+    And   I should see "8" within the tracker
   
   Scenario: See today's date on the tracker
     Given the date is "28 July 2010"
@@ -40,9 +40,9 @@ Feature: Track today's food
       | Banana | 1      | 1.day.ago      |
       | Pear   | 1      | 1.day.from_now |
     When I am on the tracker page
-    Then I should see "Apple" within "#tracker"
-    And  I should not see "Banana" within "#tracker"
-    And  I should not see "Pear" within "#tracker"
+    Then I should see "Apple" within the tracker
+    And  I should not see "Banana" within the tracker
+    And  I should not see "Pear" within the tracker
     
   Scenario: See the total points for today's entries
    Given the following entries exist:
@@ -51,4 +51,4 @@ Feature: Track today's food
      | Apple  | 0.5    | 2.minutes.ago  |
      | Banana | 1      | 1.minute.ago   |
    When I am on the tracker page
-   Then I should see "4.5" within "#tracker"
+   Then I should see "4.5" within the tracker

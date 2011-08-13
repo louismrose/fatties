@@ -10,6 +10,9 @@ module HtmlSelectorsHelpers
 
     when "the page"
       "html > body"
+
+    when "the tracker"
+      "#entries table"
       
     when "the favourites list"
       "#favourites"
