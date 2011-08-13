@@ -4,7 +4,7 @@ module EntriesHelper
     
     content_tag(:li, :class => (is_link_to_current_mode ? "current" : nil)) do 
       destination = tracker_entries_path(@tracker, :entry_mode => new_entry_mode.downcase.to_sym)
-      link_to(new_entry_mode, destination, :id => new_entry_mode.downcase)
+      link_to(new_entry_mode, destination, :id => new_entry_mode.downcase, :remote => true)
     end
   end
   
