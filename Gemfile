@@ -7,6 +7,8 @@ gem 'rails', '3.1.0.rc5'
 ## Bundle edge rails:
 # gem "rails", git: "git://github.com/rails/rails.git"
 
+gem 'jquery-rails'
+
 # Asset template engines
 group :assets do
   gem 'sass-rails', "3.1.0.rc5"
@@ -14,11 +16,18 @@ group :assets do
   gem 'uglifier'
 end
 
+
+# Web server and procfile manager recommended by Heroku
+gem 'thin'
+gem 'foreman'
+
+
+# Application-specific dependencies
 gem 'mongoid', '2.1.5'
 gem 'bson_ext', '1.3.1'
 gem 'flutie', git: "git://github.com/thoughtbot/flutie.git"  # works with asset pipeline
 gem 'hoptoad_notifier'
-gem 'jquery-rails'
+
 
 group :development do
   gem 'rspec-rails', '2.6.1'
