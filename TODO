@@ -5,7 +5,6 @@
 
 Possible refactorings
 - Move "Favourites" into the "entry mode" part of entries/index.html
-- Switch to SASS and Coffeescript when Rails 3.1 is released
 
 Possible features
 - Deleting entries? (Can do this via the console for now)
