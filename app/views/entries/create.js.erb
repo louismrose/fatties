@@ -1,4 +1,5 @@
 $('#entries').html("<%= escape_javascript(render partial: "entries", locals: { entries: @entries }) %>");
+$('#favourites').html("<%= escape_javascript(render partial: "favourites") %>");
 $('#new_entry').resetForm();
 $('#entry_<%=@entry.id%>').effect("highlight", {}, 2000);
 

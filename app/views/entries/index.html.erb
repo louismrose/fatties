@@ -1,14 +1,5 @@
 <h2><%=l @tracker.date, :format => :long_ordinal%></h2>
 
-<div id="entries">
-  <%= render :partial => "entries", :locals => { :entries => @entries } %>
-</div>
-
-<% unless Entry.favourites.empty? %>
-  <h3>Add one of your favourites:</h3>
-  <ol id="favourites">
-    <%= render :partial => "favourite", :collection => Entry.favourites %>
-  </ol>
-<% end %>
-
+<%= render :partial => "entries", :locals => { :entries => @entries } %>
+<%= render :partial => "favourites" %>
 <%= render :partial => "new_entry" %>

@@ -1,19 +1,21 @@
-<% unless entries.empty? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Food</th>
-        <th class="last">Points</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <td>Total</td>
-        <td class="last"><%=entries.sum(:points)%></td>
-      </tr>
-    </tfoot>
-    <tbody>
-      <%= render entries %>
-    </tbody>
-  </table>
-<% end %>
+<div id="entries">
+  <% unless entries.empty? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th class="last">Points</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td class="last"><%=entries.sum(:points)%></td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <%= render entries %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<div id="favourites">
+  <% unless Entry.favourites.empty? %>
+    <h3>Add one of your favourites:</h3>
+    <ol>
+      <%= render :partial => "favourite", :collection => Entry.favourites %>
+    </ol>
+  <% end %>
+</div>
