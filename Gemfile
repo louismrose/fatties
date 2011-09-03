@@ -26,7 +26,7 @@ gem 'foreman'
 gem 'mongoid', '2.1.5'
 gem 'bson_ext', '1.3.1'
 gem 'flutie', git: "git://github.com/thoughtbot/flutie.git"  # works with asset pipeline
-gem 'hoptoad_notifier'
+gem 'airbrake'
 
 
 group :development do
