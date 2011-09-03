@@ -2,7 +2,7 @@
 source 'http://gemcutter.org'
 
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '~> 3.1.0'
 
 ## Bundle edge rails:
 # gem "rails", git: "git://github.com/rails/rails.git"
@@ -11,7 +11,7 @@ gem 'jquery-rails'
 
 # Asset template engines
 group :assets do
-  gem 'sass-rails', "3.1.0.rc5"
+  gem 'sass-rails', "3.1"
   gem 'coffee-script'
   gem 'uglifier'
 end
